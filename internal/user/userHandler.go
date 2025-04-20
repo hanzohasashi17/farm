@@ -22,11 +22,11 @@ func (h *UserHandler) RegisterRoutes(router *gin.Engine) {
 }
 
 func (h *UserHandler) GetAllUsers(c *gin.Context) {
-    users, err := h.UserService.GetAllUsers()
-    if err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": "Error fetching user"})
-        return
-    }
+	users, err := h.UserService.GetAllUsers()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error fetching user"})
+		return
+	}
 
-    c.JSON(http.StatusOK, users)
+	c.JSON(http.StatusOK, users)
 }

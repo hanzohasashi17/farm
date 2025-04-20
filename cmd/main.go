@@ -30,11 +30,11 @@ func main() {
 	}
 
 	userRepo := user.NewUserRepo(db)
-    userService := user.NewUserService(userRepo)
-    userHandler := user.NewUserHandler(userService)
+	userService := user.NewUserService(userRepo)
+	userHandler := user.NewUserHandler(userService)
 
-    router := gin.Default()
-    userHandler.RegisterRoutes(router)
+	router := gin.Default()
+	userHandler.RegisterRoutes(router)
 
-    router.Run(fmt.Sprintf(":%s", cfg.AppPort))
+	router.Run(fmt.Sprintf(":%s", cfg.AppPort))
 }
